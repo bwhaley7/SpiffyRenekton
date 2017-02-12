@@ -146,6 +146,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Indicator.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PluginSDK.cpp" />
+    <ClCompile Include="SpiffyC.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Indicator.h" />
+    <ClInclude Include="LPPConstants.h" />
+    <ClInclude Include="PluginData.h" />
+    <ClInclude Include="PluginSDK.h" />
+    <ClInclude Include="SpiffyC.h" />
+    <ClInclude Include="Vector3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
