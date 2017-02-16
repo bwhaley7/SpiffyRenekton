@@ -343,23 +343,17 @@ PLUGIN_EVENT(void) OnGapCloser(GapCloserSpell const& Args)
 
 PLUGIN_EVENT(void) OnOrbwalkAfterAttack(IUnit* Source, IUnit* Target)
 {
-	GGame->PrintChat("Step 1");
 	if (Target->IsHero() && GOrbwalking->GetOrbwalkingMode() == kModeCombo && checkFuryMode(kSlotW, Target) || GOrbwalking->GetOrbwalkingMode() == kModeMixed)
 	{
-		GGame->PrintChat("Step 2");
 		float time = GGame->Time() - GEntityList->Player()->GetSpellRemainingCooldown(kSlotW);
-		GGame->PrintChat("Step 3");
 		if (useHydra->Enabled() &&
 			(GEntityList->Player()->GetSpellRemainingCooldown(kSlotW) - abs(time) < 1 || time < -6 || GEntityList->Player()->HealthPercent() < 50))
 		{
-			GGame->PrintChat("Step 4");
 			if (titHydra->IsOwned() && titHydra->IsReady())
 				titHydra->CastOnPlayer();
 			if (ravHydra->IsOwned() && ravHydra->IsReady())
 				ravHydra->CastOnPlayer();
-			GGame->PrintChat("Step 5");
 		}
-		GGame->PrintChat("Step 6");
 		if (Target != nullptr && W->IsReady() && Target->IsHero() && GOrbwalking->GetOrbwalkingMode() == kModeCombo && usew->Enabled() && checkFuryMode(kSlotW, Target))
 		{
 			W->CastOnPlayer();
